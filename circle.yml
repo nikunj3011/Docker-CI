@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: dockerci
+          name: DOCKER_HUB_TRIGGER
           command: curl -v -X POST https://hub.docker.com/api/build/v1/source/32804f5a-d715-4bb0-bef5-a9902532c0ea/trigger/35651be5-4f4a-46fe-9750-64938eb1fe81/call/
 
           
