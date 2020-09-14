@@ -21,8 +21,9 @@ jobs:
       - checkout
       - run:
           name: Trigger docker remotely
-          command: curl -v -X POST https://hub.docker.com/api/build/v1/source/2b6c67d0-0be1-41b6-8952-d1e5c7cf59ee/trigger/96f10cbb-d052-481f-afc9-161e2972d250/call/
+          command: curl -v -X POST https://hub.docker.com/api/build/v1/source/32804f5a-d715-4bb0-bef5-a9902532c0ea/trigger/35651be5-4f4a-46fe-9750-64938eb1fe81/call/
 
+          
 workflows:
     build-and-test-and-deploy:
       jobs:
