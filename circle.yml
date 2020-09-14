@@ -1,11 +1,36 @@
-deployment:
-  dockerhub:
-    branch: master
-    commands:
-     - $DOCKER_HUB_TRIGGER
+version: 2.1
 
+orbs:
+  node: circleci/node@1.1.6
 
-       
-test:
-  override:    
-    - mocha
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm test
+  
+  deploy:
+    docker:
+      - image: circleci/node:10.0-browsers # < an arbitrarily chosen docker image.
+    steps:
+      - checkout
+      - run:
+          name: DOCKER_HUB_TRIGGER
+          command: curl -v -X POST https://hub.docker.com/api/build/v1/source/32804f5a-d715-4bb0-bef5-a9902532c0ea/trigger/35651be5-4f4a-46fe-9750-64938eb1fe81/call/
+
+          
+workflows:
+    build-and-test-and-deploy:
+      jobs:
+        - build-and-test
+        - deploy:
+            requires:
+              - build-and-test
+            filters:
+              branches:
+                only: master
