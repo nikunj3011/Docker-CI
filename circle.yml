@@ -16,7 +16,7 @@ jobs:
   
   deploy:
     docker:
-      - image: circleci/node:10.0-browsers # < an arbitrarily chosen docker image.
+      - image: nikunj3011/dockerci # < an arbitrarily chosen docker image.
     steps:
       - checkout
       - run:
