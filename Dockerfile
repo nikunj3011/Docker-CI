@@ -1,6 +1,6 @@
 FROM centos:centos8
 
-LABEL MAINTAINER=nigelpoulton@hotmail.com
+LABEL MAINTAINER=nikunjrathod3011@gmail.com
 
 # Enable EPEL for Node.js
 # RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
