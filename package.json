@@ -1,15 +1,13 @@
 {
-  "name": "dcker-app",
+  "name": "container-web-test",
   "private": true,
-  "version": "0.0.1",
-  "description": "Docker-CI",
+  "version": "0.0.3",
+  "description": "Demo app for Web container demonstrations",
   "main": "app.js",
-  "author": "Nikunj Rathod <nikunjrathod3011@gmail.com>",
-  "license": "none",
+  "author": "Nigel Poulton <nigelpoulton@hotmail.com>",
+  "license": "May contain vulnerabilities!",
   "dependencies": {
-    "express": "3.2.4",
-    "jade": "1.11.0",
-    "mocha": "1.20.1",
-    "supertest": "1.1.0"
+    "express": "^4.17.1",
+    "pug": "2.0.4"
   }
 }
